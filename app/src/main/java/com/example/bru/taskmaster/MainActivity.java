@@ -20,5 +20,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(addTaskIntent);
             // starts the activity of the intent(routing) (activity = view)
         });
+
+        Button allTasksButton = MainActivity.this.findViewById(R.id.allTasks);
+        allTasksButton.setOnClickListener(v ->{
+            Intent allTasksIntent = new Intent(MainActivity.this, allTasks.class);
+            startActivity(allTasksIntent);
+        });
     }
 }

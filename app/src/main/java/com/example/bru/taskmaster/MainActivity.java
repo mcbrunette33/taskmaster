@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    //home page use this to set routing to other pages
+    //style home page as you want
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         allTasksButton.setOnClickListener(v ->{
             Intent allTasksIntent = new Intent(MainActivity.this, allTasks.class);
             startActivity(allTasksIntent);
+        });
+
+        Button userDetailButton = MainActivity.this.findViewById(R.id.userDetailButton);
+        userDetailButton.setOnClickListener(v ->{
+            Intent userDetailIntent = new Intent(MainActivity.this, userDetail.class);
+            startActivity(userDetailIntent);
         });
     }
 }

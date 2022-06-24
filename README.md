@@ -7,3 +7,7 @@
 ![taskmasterpic1](/imgs/taskmasterpic1.jpg)
 - ![addTasks](/imgs/addtasks.jpg)
 - Roger helped me with this lab
+## Lab 27
+
+- more features
+- added more routing

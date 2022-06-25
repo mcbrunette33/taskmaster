@@ -3,12 +3,18 @@ package com.example.bru.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     //home page use this to set routing to other pages
     //style home page as you want
+    SharedPreferences preferences;
+    public static final String TASKTITLE = "taskTitle";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +35,23 @@ public class MainActivity extends AppCompatActivity {
             startActivity(allTasksIntent);
         });
 
-        Button userDetailButton = MainActivity.this.findViewById(R.id.userDetailButton);
+        ImageButton userDetailButton = MainActivity.this.findViewById(R.id.userDetailButton);
         userDetailButton.setOnClickListener(v ->{
             Intent userDetailIntent = new Intent(MainActivity.this, userDetail.class);
             startActivity(userDetailIntent);
+        });
+        Button taskDetailsButton = MainActivity.this.findViewById(R.id.taskDetailsButton);
+        taskDetailsButton.setOnClickListener(v ->{
+            Intent taskDetailsIntent = new Intent(MainActivity.this, taskDetails.class);
+            startActivity(taskDetailsIntent);
+        });
+
+        TextView taskOne = findViewById(R.id.taskOne);
+        taskOne.setOnClickListener(v -> {
+            Intent taskOneIntent = new Intent(MainActivity.this, taskDetails.class);
+            String taskString = taskOne.getText().toString();
+            taskOneIntent.putExtra(TASKTITLE, taskString);
+            startActivity(taskOneIntent);
         });
     }
 }

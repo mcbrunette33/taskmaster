@@ -53,5 +53,19 @@ public class MainActivity extends AppCompatActivity {
             taskOneIntent.putExtra(TASKTITLE, taskString);
             startActivity(taskOneIntent);
         });
+        TextView taskTwo = findViewById(R.id.taskTwo);
+        taskTwo.setOnClickListener(v -> {
+            Intent taskTwoIntent = new Intent(MainActivity.this, taskDetails.class);
+            String taskString = taskTwo.getText().toString();
+            taskTwoIntent.putExtra(TASKTITLE, taskString);
+            startActivity(taskTwoIntent);
+        });
+        TextView taskThree = findViewById(R.id.taskThree);
+        taskThree.setOnClickListener(v -> {
+            Intent taskThreeIntent = new Intent(MainActivity.this, taskDetails.class);
+            String taskString = taskThree.getText().toString();
+            taskThreeIntent.putExtra(TASKTITLE, taskString);
+            startActivity(taskThreeIntent);
+        });
     }
 }

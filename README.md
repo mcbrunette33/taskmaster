@@ -12,3 +12,7 @@
 - more features
 - added more routing
 - ![taskDetails](/imgs/taskDetails.jpg)
+- ## Lab 28 & 29
+- Roger helped me with this lab
+- ![lab29java401](/imgs/lab29java401.jpg)
+- 

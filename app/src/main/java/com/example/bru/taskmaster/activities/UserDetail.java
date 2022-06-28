@@ -1,4 +1,4 @@
-package com.example.bru.taskmaster;
+package com.example.bru.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class userDetail extends AppCompatActivity {
+import com.example.bru.taskmaster.R;
+
+public class UserDetail extends AppCompatActivity {
 
     SharedPreferences preferences;
     public static final String USERNAME = "username";
@@ -25,7 +27,7 @@ public class userDetail extends AppCompatActivity {
             EditText userName = findViewById(R.id.userName);
             String userNameString = userName.getText().toString();
             userNameEditor.putString(USERNAME, userNameString);
-            Toast.makeText(userDetail.this, "New Username", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UserDetail.this, "New Username", Toast.LENGTH_SHORT).show();
 
         });
 

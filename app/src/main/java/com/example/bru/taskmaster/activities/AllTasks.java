@@ -1,10 +1,12 @@
-package com.example.bru.taskmaster;
+package com.example.bru.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class allTasks extends AppCompatActivity {
+import com.example.bru.taskmaster.R;
+
+public class AllTasks extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

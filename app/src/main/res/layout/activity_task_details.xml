@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#40ECDC"
+    android:background="#FF5722"
     tools:context=".activities.TaskDetails">
 
     <TextView
@@ -19,6 +19,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/taskDetailBody"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,8 +27,8 @@
         android:id="@+id/taskDetailBody"
         android:layout_width="202dp"
         android:layout_height="68dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginEnd="127dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="104dp"
         android:text="Lorem Ipsum description."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskDetailHeader" />
@@ -36,8 +37,8 @@
         android:id="@+id/TaskDetailState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="92dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskDetailBody" />

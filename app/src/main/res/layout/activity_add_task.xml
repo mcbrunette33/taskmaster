@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF5722"
     tools:context=".activities.AddTask">
 
     <TextView
@@ -65,7 +66,7 @@
         android:id="@+id/textView4"
         android:layout_width="226dp"
         android:layout_height="52dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="15dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Task Description"
         android:textSize="24sp"
@@ -76,7 +77,7 @@
         android:id="@+id/BodyInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -102,6 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="17dp"
+        android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BodyInput" />
 

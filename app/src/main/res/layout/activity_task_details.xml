@@ -17,13 +17,13 @@
         android:text="TASK DETAILS"
         android:textColor="#050505"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/taskDetailText"
+        app:layout_constraintBottom_toTopOf="@+id/taskDetailBody"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/taskDetailText"
+        android:id="@+id/taskDetailBody"
         android:layout_width="202dp"
         android:layout_height="68dp"
         android:layout_marginTop="81dp"
@@ -31,4 +31,14 @@
         android:text="Lorem Ipsum description."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskDetailHeader" />
+
+    <TextView
+        android:id="@+id/TaskDetailState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDetailBody" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@ public class TaskListRecViewAdapter extends RecyclerView.Adapter<TaskListRecView
         TextView fragmentTaskList = holder.itemView.findViewById(R.id.TaskListFrag);
         String taskTitle = tasks.get(position).getTitle();
         String taskBody = tasks.get(position).getBody();
-        String taskState = tasks.get(position).getState();
+        String taskState = tasks.get(position).getState().toString();
         fragmentTaskList.setText("-" + taskTitle);
 
         View taskView = holder.itemView;

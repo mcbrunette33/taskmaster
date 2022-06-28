@@ -1,22 +1,21 @@
 package com.example.bru.taskmaster.models;
 
-public class Tasks {
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
+
+public class Tasks {
+    @PrimaryKey(autoGenerate = true)
+    long id;
     String title;
     String body;
-    String state;
+    StateEnum state;
 
-    public Tasks() {
-    }
-
-    public Tasks(String title) {
+    public Tasks(String title, String body, StateEnum state) {
         this.title = title;
-    }
-
-    public Tasks(String _title, String _body, String _state) {
-        this.title = _title;
-        this.body = _body;
-        this.state = _state;
+        this.body = body;
+        this.state = state;
     }
 
     public String getTitle() {
@@ -35,11 +34,19 @@ public class Tasks {
         this.body = body;
     }
 
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

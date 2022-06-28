@@ -1,13 +1,15 @@
-package com.example.bru.taskmaster;
+package com.example.bru.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class taskDetails extends AppCompatActivity {
+import com.example.bru.taskmaster.R;
+import com.example.bru.taskmaster.activities.MainActivity;
+
+public class TaskDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +17,7 @@ public class taskDetails extends AppCompatActivity {
         setContentView(R.layout.activity_task_details);
 
         Intent calledIntent = getIntent();
-        String taskTitle = calledIntent.getStringExtra(MainActivity.TASKTITLE);
+        String taskTitle = calledIntent.getStringExtra(MainActivity.TASK_TITLE);
         TextView taskDetailHeader = findViewById(R.id.taskDetailHeader);
         taskDetailHeader.setText(taskTitle);
     }

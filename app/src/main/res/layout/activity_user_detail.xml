@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#15F1DC"
-    tools:context=".userDetail">
+    tools:context=".activities.UserDetail">
 
     <Button
         android:id="@+id/saveButton"

@@ -1,13 +1,7 @@
 package com.example.bru.taskmaster.models;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity
-
 public class Tasks {
-    @PrimaryKey(autoGenerate = true)
-    long id;
+
     String title;
     String body;
     StateEnum state;
@@ -42,11 +36,4 @@ public class Tasks {
         this.state = state;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

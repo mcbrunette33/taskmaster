@@ -26,16 +26,16 @@ public class AddTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
-        taskMasterDatabase = Room.databaseBuilder(
+     /*   taskMasterDatabase = Room.databaseBuilder(
                         getApplicationContext(),
                         TaskMasterDatabase.class,
                         DATABASE_NAME)
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build();
-
+*/
         setUpSpinner();
-        setUpAddButton(taskMasterDatabase);
+/*        setUpAddButton(taskMasterDatabase);*/
     }
     public void setUpSpinner(){
         Spinner spinner = findViewById(R.id.spinner);
@@ -53,7 +53,7 @@ public class AddTask extends AppCompatActivity {
             String BodyInput = ((EditText)findViewById(R.id.BodyInput)).getText().toString();
             StateEnum stateEnum = StateEnum.fromString(spinner.getSelectedItem().toString());
             Tasks newTasks = new Tasks(TitleInput, BodyInput, stateEnum);
-            database.taskDao().insertATask(newTasks);
+        /*    database.taskDao().insertATask(newTasks);*/
             Toast.makeText(AddTask.this, "task added", Toast.LENGTH_SHORT).show();
         });
     }

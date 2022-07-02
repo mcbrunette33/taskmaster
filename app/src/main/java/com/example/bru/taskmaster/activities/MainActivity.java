@@ -3,19 +3,19 @@ package com.example.bru.taskmaster.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-/*import com.example.bru.taskmaster.Database.TaskMasterDatabase;*/
+import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Task;
 import com.example.bru.taskmaster.R;
 import com.example.bru.taskmaster.adapter.TaskListRecViewAdapter;
-/*import com.example.bru.taskmaster.models.Tasks;*/
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,26 +27,16 @@ public class MainActivity extends AppCompatActivity {
     public static final String TASK_TITLE = "Task Title";
     public static final String TASK_BODY = "Task Body";
     public static final String TASK_STATE = "Task State";
-/*
-    public static final String DATABASE_NAME = "taskslist";
-*/
-    List<Tasks> tasks = null;
+    public static final String TAG = "mainactivity";
+
+
+    List<Task> tasks = null;
     TaskListRecViewAdapter adapter;
-    /*TaskMasterDatabase taskMasterDatabase;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /* taskMasterDatabase = Room.databaseBuilder(
-                        getApplicationContext(),
-                        TaskMasterDatabase.class,
-                        DATABASE_NAME)
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build();*/
-       /* tasks = taskMasterDatabase.taskDao().findAll();*/
-
         Button addTaskButton = MainActivity.this.findViewById(R.id.addTaskButton);
         addTaskButton.setOnClickListener(v ->{
             Intent addTaskIntent = new Intent(MainActivity.this, AddTask.class);
@@ -75,16 +65,47 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        tasks = new ArrayList<>();
+        Amplify.API.query(
+                ModelQuery.list(Task.class),
+                success ->{
+                    Log.i(TAG, "task success");
+                    tasks.clear();
+                    for(Task task : success.getData()){
+                        tasks.add(task);
+                    }
+                    /*runOnUiThread(()->{
+                        adapter.notifyDataSetChanged();
+                    });*/
+                },
+                failure -> Log.i(TAG, "task not succeeded")
+        );
         adapter = new TaskListRecViewAdapter(tasks, this);
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        tasks.clear();
-    /*    tasks.addAll(taskMasterDatabase.taskDao().findAll());*/
-        adapter.notifyDataSetChanged();
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        tasks = new ArrayList<>();
+        Amplify.API.query(
+                ModelQuery.list(Task.class),
+                success ->{
+                    Log.i(TAG, "task success");
+                    tasks.clear();
+                    for(Task task : success.getData()){
+                        tasks.add(task);
+                    }
+                    runOnUiThread(()->{
+                        adapter.notifyDataSetChanged();
+                    });
+                },
+                failure -> Log.i(TAG, "task not succeeded")
+        );
+        adapter = new TaskListRecViewAdapter(tasks, this);
+        recyclerView.setAdapter(adapter);
     }
 }

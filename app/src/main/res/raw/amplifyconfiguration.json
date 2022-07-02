@@ -4,12 +4,12 @@
     "api": {
         "plugins": {
             "awsAPIPlugin": {
-                "amplifyDatasource": {
+                "taskmaster": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://bh2mkjirgzemviabkkzxnkrdny.appsync-api.us-east-1.amazonaws.com/graphql",
-                    "region": "us-east-1",
+                    "endpoint": "https://pfi37hrcercmredqmmex7556xy.appsync-api.us-west-1.amazonaws.com/graphql",
+                    "region": "us-west-1",
                     "authorizationType": "API_KEY",
-                    "apiKey": "da2-zpwpfyofffcrzda7alujhc4z24"
+                    "apiKey": "da2-acslf655pzae3gn6wuljz556de"
                 }
             }
         }

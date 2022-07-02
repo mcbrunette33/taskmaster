@@ -10,18 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amplifyframework.datastore.generated.model.Task;
 import com.example.bru.taskmaster.R;
 import com.example.bru.taskmaster.activities.MainActivity;
 import com.example.bru.taskmaster.activities.TaskDetails;
-import com.example.bru.taskmaster.models.Tasks;
+
 
 import java.util.List;
 
 public class TaskListRecViewAdapter extends RecyclerView.Adapter<TaskListRecViewAdapter.TaskListViewHolder> {
-    List<Tasks> tasks;
+    List<Task> tasks;
     Context callingActivity;
 
-    public TaskListRecViewAdapter(List<Tasks> _tasks, Context _callingActivity) {
+    public TaskListRecViewAdapter(List<Task> _tasks, Context _callingActivity) {
         this.tasks = _tasks;
         this.callingActivity = _callingActivity;
     }

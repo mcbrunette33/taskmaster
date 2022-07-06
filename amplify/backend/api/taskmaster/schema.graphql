@@ -7,7 +7,8 @@ type Task @model @auth(rules: [{allow: public}]){
   title: String!
   body: String
   state: StateEnum
-
+  teamId: ID! @index(name: "byTeam", sortKeyFields:["title"])
+  team: Team @belongsTo(fields: ["teamId"])
 }
 
 enum StateEnum {
@@ -15,4 +16,9 @@ enum StateEnum {
   ASSIGNED
   IN_PROGRESS
   COMPLETE
+}
+type Team @model @auth(rules: [{allow: public}]){
+id: ID!
+name: String!
+tasks: [Task] @hasMany (indexName: "byTeam", fields: ["id"])
 }

@@ -15,4 +15,6 @@
 - ## Lab 28 & 29
 - Roger helped me with this lab
 - ![lab29java401](/imgs/lab29java401.jpg)
-- 
+# Lab 31
+- added teams schema
+- working on adding to google play store
